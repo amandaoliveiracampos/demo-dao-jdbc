@@ -68,7 +68,6 @@ public class DepartmentDaoJDBC implements DepartmentDao {
         } finally {
             DB.closeResultSet(rs);
             DB.closeStatment(st);
-
         }
     }
 
@@ -89,6 +88,7 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
             if (rowsAffected > 0) {
                 ResultSet rs = st.getGeneratedKeys();
+
                 if (rs.next()) {
                     int id = rs.getInt(1);
                     obj.setId(id);
@@ -100,7 +100,6 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             throw new DbException(e.getMessage());
         } finally {
             DB.closeStatment(st);
-
         }
     }
 
@@ -115,13 +114,11 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 
             st.setString(1, obj.getName());
             st.setInt(2, obj.getId());
-
             st.executeUpdate();
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
         } finally {
             DB.closeStatment(st);
-
         }
     }
 
@@ -139,7 +136,6 @@ public class DepartmentDaoJDBC implements DepartmentDao {
             throw new DbIntergrityException(e.getMessage());
         } finally {
             DB.closeStatment(st);
-
         }
     }
 }

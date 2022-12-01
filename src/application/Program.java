@@ -23,17 +23,16 @@ public class Program {
         System.out.println("\n=== Teste 2: seller findByDepartment ===");
         Department departament = new Department(2, null);
         List<Seller> list = sellerDao.findByDepartment(departament);
+
         for (Seller obj : list) {
             System.out.println(obj);
-
         }
         System.out.println("\n=== Teste 3: seller findAll ===");
         list = sellerDao.findAll();
+
         for (Seller obj : list) {
             System.out.println(obj);
-
         }
-
         System.out.println("\n=== Teste 4: seller insert ===");
         Seller newseller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 400d, departament);
         sellerDao.insert(newseller);
@@ -52,7 +51,5 @@ public class Program {
         System.out.println("Delete completed");
 
         sc.close();
-
     }
-
 }
