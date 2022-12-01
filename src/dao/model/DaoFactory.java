@@ -6,6 +6,10 @@ import model.dao.impl.SellerDaoJDBC;
 
 public class DaoFactory {
 
+    private DaoFactory() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static SellerDao creatSellerDao() {
         return new SellerDaoJDBC(DB.getConnection());
     }

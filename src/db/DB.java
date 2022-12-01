@@ -11,6 +11,10 @@ import java.util.Properties;
 
 public class DB {
 
+    private DB() {
+        throw new IllegalStateException("Utility class");
+    }
+
     private static Connection conn = null;
 
     public static Connection getConnection() {
